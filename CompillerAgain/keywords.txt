@@ -1,0 +1,13 @@
+PROGRAMM
+END
+IF
+ELSE
+FUNC
+ENDIF
+ENDF
+WHILE
+FOR
+true
+false
+integer
+bool

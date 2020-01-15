@@ -1,0 +1,19 @@
+PROGRAMM;/*Comment 1*/
+integer x;
+bool y;
+integer z;
+bool check;
+bool f;
+integer k;
+x=3;
+y=true;
+z = (x+25)  - (x+convert(y,455)) + (f * z);
+FUNC convert(bool y , integer s)
+IF(s>0)
+z = 5;
+y = true;
+ELSE
+y = false;
+ENDIF;
+ENDF;
+END;
