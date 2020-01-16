@@ -3,6 +3,11 @@
 #include "stmts.h"
 #include "eob.h"
 #include "type.hpp"
+#include "id.hpp"
+#include "nums.hpp"
+#include "compare.h"
+#include "unary.h"
+
 for_stmt::for_stmt(){
 	//Empty implementation
 }
@@ -26,17 +31,52 @@ void for_stmt::deriving(int pos) {
 				_childs.push_back(newNode);
 				newNode->deriving(pos + 2);
 				if (lexStream[pos + 3].type == IDENT) {
-					// ÒÓÒ ÎÑÒÀÍÎÂÈËÑß 
+					symbol* newNode = new id;
+					newNode->setParent(this);
+					_childs.push_back(newNode);
+					newNode->deriving(pos + 3);
 					if (lexStream[pos + 4].type == DIVIDE && Dividers[lexStream[pos + 4].numInValidTable].val == "=") {
+						symbol* newLeaf = new terminal("=");
+						_childs.push_back(newLeaf);
 						if (lexStream[pos + 5].type == CONSTANT) {
+							symbol* newNode = new nums;
+							newNode->setParent(this);
+							_childs.push_back(newNode);
+							newNode->deriving(pos + 5);
 							if (lexStream[pos + 6].type == DIVIDE && Dividers[lexStream[pos + 6].numInValidTable].val == ";") {
+								symbol* newLeaf = new terminal(";");
+								_childs.push_back(newLeaf);
 								if (lexStream[pos + 7].type == IDENT) {
+									symbol* newNode = new id;
+									newNode->setParent(this);
+									_childs.push_back(newNode);
+									newNode->deriving(pos + 7);
 									if ((lexStream[pos + 8].type == DIVIDE) && (Dividers[lexStream[pos + 8].numInValidTable].val == ">" || Dividers[lexStream[pos + 8].numInValidTable].val == "<" || Dividers[lexStream[pos + 8].numInValidTable].val == "=" || Dividers[lexStream[pos + 8].numInValidTable].val == "!")) {
+										symbol* newNode = new compare;
+										newNode->setParent(this);
+										_childs.push_back(newNode);
+										newNode->deriving(pos + 8);
 										if (lexStream[pos + 9].type == CONSTANT) {
+											symbol* newNode = new nums;
+											newNode->setParent(this);
+											_childs.push_back(newNode);
+											newNode->deriving(pos + 9);
 											if (lexStream[pos + 10].type == DIVIDE && Dividers[lexStream[pos + 10].numInValidTable].val == ";") {
+												symbol* newLeaf = new terminal(";");
+												_childs.push_back(newLeaf);
 												if ((lexStream[pos + 11].type == DIVIDE && lexStream[pos + 12].type == DIVIDE) && ((Dividers[lexStream[pos + 11].numInValidTable].val == "+" && Dividers[lexStream[pos + 12].numInValidTable].val == "+") || (Dividers[lexStream[pos + 11].numInValidTable].val == "-" && Dividers[lexStream[pos + 12].numInValidTable].val == "-"))) {
+													symbol* newNode = new unary;
+													newNode->setParent(this);
+													_childs.push_back(newNode);
+													newNode->deriving(pos + 11);
 													if (lexStream[pos + 13].type == IDENT) {
+														symbol* newNode = new id;
+														newNode->setParent(this);
+														_childs.push_back(newNode);
+														newNode->deriving(pos + 13);
 														if (lexStream[pos + 14].type == DIVIDE && Dividers[lexStream[pos + 14].numInValidTable].val == ")") {
+															symbol* newLeaf = new terminal(")");
+															_childs.push_back(newLeaf);
 															if (lexStream[pos + 15].type == KEY_WORD && KeyWords[lexStream[pos + 15].numInValidTable].val == "DO") {
 																int index = pos + 16;
 																int startOfLasStatement{};

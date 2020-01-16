@@ -116,6 +116,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="block.h" />
+    <ClInclude Include="compare.h" />
     <ClInclude Include="cycle_stmt.h" />
     <ClInclude Include="decl.hpp" />
     <ClInclude Include="decls.h" />
@@ -132,9 +133,11 @@
     <ClInclude Include="terminal.h" />
     <ClInclude Include="type.hpp" />
     <ClInclude Include="typedef.hpp" />
+    <ClInclude Include="unary.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="block.cpp" />
+    <ClCompile Include="compare.cpp" />
     <ClCompile Include="cycle_stmt.cpp" />
     <ClCompile Include="decl.cpp" />
     <ClCompile Include="decls.cpp" />
@@ -151,6 +154,7 @@
     <ClCompile Include="terminal.cpp" />
     <ClCompile Include="type.cpp" />
     <ClCompile Include="typedef.cpp" />
+    <ClCompile Include="unary.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
