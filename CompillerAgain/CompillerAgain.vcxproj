@@ -124,6 +124,7 @@
     <ClInclude Include="eob.h" />
     <ClInclude Include="for_stmt.h" />
     <ClInclude Include="id.hpp" />
+    <ClInclude Include="if_stmt.h" />
     <ClInclude Include="loc.hpp" />
     <ClInclude Include="nums.hpp" />
     <ClInclude Include="parser.hpp" />
@@ -146,6 +147,7 @@
     <ClCompile Include="eob.cpp" />
     <ClCompile Include="for_stmt.cpp" />
     <ClCompile Include="id.cpp" />
+    <ClCompile Include="if_stmt.cpp" />
     <ClCompile Include="loc.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="nums.cpp" />
