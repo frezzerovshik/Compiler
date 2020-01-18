@@ -116,6 +116,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="block.h" />
+    <ClInclude Include="call_func.h" />
     <ClInclude Include="compare.h" />
     <ClInclude Include="cycle_stmt.h" />
     <ClInclude Include="decl.hpp" />
@@ -137,6 +138,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="block.cpp" />
+    <ClCompile Include="call_func.cpp" />
     <ClCompile Include="compare.cpp" />
     <ClCompile Include="cycle_stmt.cpp" />
     <ClCompile Include="decl.cpp" />
