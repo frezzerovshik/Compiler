@@ -69,19 +69,23 @@ void if_stmt::deriving(int pos) {
 					_childs.push_back(newLeaf);
 				}
 				else {
-					// Error
+					cout << "Error: expected ;" << endl;
+					return;
 				}
 
 			}
 			else {
-				// Error
+				cout << "Error: expected boolean expr" << endl;
+				return;
 			}
 		}
 		else {
-			// Error
+			cout << "Error: expected (" << endl;
+			return;
 		}
 	}
 	else {
-		//Error
+		cout << "Error: expected IF" << endl;
+		return;
 	}
 }

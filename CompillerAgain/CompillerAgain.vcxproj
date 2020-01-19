@@ -115,17 +115,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="arg.h" />
     <ClInclude Include="block.h" />
     <ClInclude Include="call_func.h" />
     <ClInclude Include="compare.h" />
     <ClInclude Include="cycle_stmt.h" />
     <ClInclude Include="decl.hpp" />
     <ClInclude Include="decls.h" />
+    <ClInclude Include="decl_func.h" />
     <ClInclude Include="eob.h" />
     <ClInclude Include="for_stmt.h" />
     <ClInclude Include="id.hpp" />
     <ClInclude Include="if_stmt.h" />
     <ClInclude Include="loc.hpp" />
+    <ClInclude Include="logic.h" />
     <ClInclude Include="nums.hpp" />
     <ClInclude Include="parser.hpp" />
     <ClInclude Include="S.h" />
@@ -133,22 +136,26 @@
     <ClInclude Include="symbol.h" />
     <ClInclude Include="table.h" />
     <ClInclude Include="terminal.h" />
+    <ClInclude Include="text.h" />
     <ClInclude Include="type.hpp" />
     <ClInclude Include="typedef.hpp" />
     <ClInclude Include="unary.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="arg.cpp" />
     <ClCompile Include="block.cpp" />
     <ClCompile Include="call_func.cpp" />
     <ClCompile Include="compare.cpp" />
     <ClCompile Include="cycle_stmt.cpp" />
     <ClCompile Include="decl.cpp" />
     <ClCompile Include="decls.cpp" />
+    <ClCompile Include="decl_func.cpp" />
     <ClCompile Include="eob.cpp" />
     <ClCompile Include="for_stmt.cpp" />
     <ClCompile Include="id.cpp" />
     <ClCompile Include="if_stmt.cpp" />
     <ClCompile Include="loc.cpp" />
+    <ClCompile Include="logic.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="nums.cpp" />
     <ClCompile Include="parser.cpp" />
@@ -156,6 +163,7 @@
     <ClCompile Include="stmts.cpp" />
     <ClCompile Include="symbol.cpp" />
     <ClCompile Include="terminal.cpp" />
+    <ClCompile Include="text.cpp" />
     <ClCompile Include="type.cpp" />
     <ClCompile Include="typedef.cpp" />
     <ClCompile Include="unary.cpp" />
