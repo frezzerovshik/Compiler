@@ -116,6 +116,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="arg.h" />
+    <ClInclude Include="ass.h" />
     <ClInclude Include="block.h" />
     <ClInclude Include="call_func.h" />
     <ClInclude Include="compare.h" />
@@ -143,6 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="arg.cpp" />
+    <ClCompile Include="ass.cpp" />
     <ClCompile Include="block.cpp" />
     <ClCompile Include="call_func.cpp" />
     <ClCompile Include="compare.cpp" />
