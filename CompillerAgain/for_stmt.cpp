@@ -10,6 +10,7 @@
 
 for_stmt::for_stmt(){
 	//Empty implementation
+	setFlag(false);
 }
 
 

@@ -5,6 +5,7 @@
 terminal::terminal()
 {
 	//Empty implementation
+	setFlag(true);
 }
 
 
@@ -27,8 +28,10 @@ void terminal::deriving(int pos) {
 terminal::terminal(const char *str) {
 	_value = str;
 	_parent = nullptr;
+	setFlag(true);
 }
 terminal::terminal(string str) {
 	_value = str;
 	_parent = nullptr;
+	setFlag(true);
 }

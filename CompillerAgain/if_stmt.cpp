@@ -4,6 +4,7 @@
 #include "boolean.h"
 if_stmt::if_stmt(){
 	// Empty implementation
+	setFlag(false);
 }
 
 

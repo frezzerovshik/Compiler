@@ -4,6 +4,7 @@
 
 term::term()
 {
+	setFlag(false);
 }
 
 

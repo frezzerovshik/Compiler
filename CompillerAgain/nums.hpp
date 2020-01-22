@@ -10,8 +10,8 @@
 #include "symbol.h"
 
 class nums : public symbol{
-    vector<symbol*> _childs;
 public:
+	vector<symbol*> _childs;
     nums();
     ~nums();
     void deriving(int pos);

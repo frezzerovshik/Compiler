@@ -5,6 +5,7 @@
 
 block::block()
 {
+	setFlag(false);
 }
 
 

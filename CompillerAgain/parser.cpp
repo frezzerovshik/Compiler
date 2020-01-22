@@ -82,6 +82,17 @@ bool parser::isDivider(int index) {
 	}
 	return answer;
 }
+
+bool parser::isDivider(string cmp) {
+	bool answer = false;
+	for (int i = 0; i < Dividers.size(); ++i) {
+		if (cmp == Dividers[i].val) {
+			answer = true;
+			break;
+		}
+	}
+	return answer;
+}
 bool parser::isKeyWord(string cmp) {
 	bool answer = false;
 	for (int i = 0; i < KeyWords.size(); ++i) {

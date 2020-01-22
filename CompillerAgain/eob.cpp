@@ -6,6 +6,7 @@
 
 eob::eob()
 {
+	setFlag(false);
 }
 
 
@@ -30,12 +31,12 @@ void eob::deriving(int pos){
 			}
 		}
 		else {
-			// Error
+			cout << "Error: expected . or ;" << endl;
 			throw 1;
 		}
 	}
 	else {
-		// Error
+		cout << "Error: expected END" << endl;
 		throw 1;
 	}
 

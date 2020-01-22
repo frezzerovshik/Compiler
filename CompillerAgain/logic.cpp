@@ -23,6 +23,7 @@ void logic::deriving(int pos)
 
 logic::logic()
 {
+	setFlag(false);
 }
 
 

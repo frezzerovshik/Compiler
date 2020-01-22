@@ -4,6 +4,7 @@
 
 cycle_stmt::cycle_stmt(){
 	//Empty implementation
+	setFlag(false);
 }
 
 

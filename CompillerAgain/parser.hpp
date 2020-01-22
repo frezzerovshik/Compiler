@@ -16,15 +16,7 @@ class parser {
 	enum state {STATEMENT_START,STATEMENT_ERROR,STATEMENT_DIVIDER,STATEMENT_UNDERSCORE,   STATEMENT_ID, STATEMENT_CONST, STATEMENT_FINAL };
 	bool getCharStream();
 
-	bool isInAlphapet(int index);
-	bool isKeyWord(string cmp);
-	bool isDivider(int index);
-	bool isDigit(int index);
-	bool isUnderscore(int index);
-	bool isEndif(string cmp);
-	bool isEndf(string cmp);
-	bool isFunc(string cmp);
-	bool isLastChar(int i);
+	
 
 
 	void makeKeyWordLex(int i);
@@ -44,6 +36,16 @@ public:
 	vector<LEX> lexStream;
 	parser();
 	~parser();
+	bool isInAlphapet(int index);
+	bool isKeyWord(string cmp);
+	bool isDivider(int index);
+	bool isDivider(string cmp);
+	bool isDigit(int index);
+	bool isUnderscore(int index);
+	bool isEndif(string cmp);
+	bool isEndf(string cmp);
+	bool isFunc(string cmp);
+	bool isLastChar(int i);
 	void printLexStream();
 	void printTableId();
 	void printTableConst();

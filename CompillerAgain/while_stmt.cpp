@@ -4,6 +4,7 @@
 #include "eob.h"
 #include "boolean.h"
 while_stmt::while_stmt(){
+	setFlag(false);
 }
 
 
@@ -61,27 +62,27 @@ void while_stmt::deriving(int pos) {
 
 					}
 					else {
-						//Error
+						cout << "Error: expected DO" << endl;
 						throw 1;
 					}
 				}
 				else {
-					// Error
+					cout << "Error: expected )" << endl;
 					throw 1;
 				}
 			}
 			else{
-				// Error
+				cout << "Error: expected (" << endl;
 				throw 1;
 			}
 		}
 		else {
-			// Error
+			cout << "Error: expected WHILE DO" << endl;
 			throw 1;
 		}
 	}
 	else {
-		// Error
+		cout << "Error: expected KEYWORD" << endl;
 		throw 1;
 	}
 	cout << "while" << endl;

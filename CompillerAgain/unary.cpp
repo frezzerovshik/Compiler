@@ -4,6 +4,7 @@
 
 unary::unary(){
 	//Emty implementation
+	setFlag(false);
 }
 
 

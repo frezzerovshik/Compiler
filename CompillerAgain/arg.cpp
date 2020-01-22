@@ -161,6 +161,7 @@ void arg::deriving(int pos)
 
 arg::arg()
 {
+	setFlag(false);
 }
 
 

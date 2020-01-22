@@ -11,6 +11,7 @@
 #include "type.hpp"
 decl::decl(){
     //Emty implementation
+	setFlag(false);
 }
 decl::~decl(){
     //Empty implementation

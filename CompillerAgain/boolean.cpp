@@ -5,6 +5,7 @@
 #include "compare.h"
 boolean::boolean()
 {
+	setFlag(false);
 }
 
 

@@ -10,6 +10,7 @@
 
 class id : public symbol{
 public:
+	vector<symbol*> _childs;
     id();
     ~id();
     void deriving(int pos);

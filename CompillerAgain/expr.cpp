@@ -4,6 +4,7 @@
 #include "terminal.h"
 
 expr::expr(){
+	setFlag(false);
 }
 
 

@@ -6,6 +6,7 @@
 
 
 decl_func::decl_func(){
+	setFlag(false);
 }
 
 
@@ -49,17 +50,17 @@ void decl_func::deriving(int pos) {
 				}
 			}
 			else {
-				// Error
+				cout << "Error: expected (" << endl;
 				throw 1;
 			}
 		}
 		else {
-			// Error
+			cout << "Error: expected id" << endl;
 			throw 1;
 		}
 	}
 	else {
-		//Error
+		cout << "Error: expected FUNC" << endl;
 		throw 1;
 	}
 	cout << "decl_func" << endl;

@@ -3,8 +3,9 @@
 #include "terminal.h"
 class logic:public symbol
 {
-	vector<symbol*> _childs;
+
 public:
+	vector<symbol*> _childs;
 	void deriving(int pos);
 	logic();
 	~logic();

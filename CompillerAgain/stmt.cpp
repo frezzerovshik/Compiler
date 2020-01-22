@@ -5,6 +5,7 @@
 
 
 stmt::stmt(){
+	setFlag(false);
 }
 
 

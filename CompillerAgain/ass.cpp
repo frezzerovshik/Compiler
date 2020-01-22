@@ -3,6 +3,7 @@
 #include "terminal.h"
 #include "expr.h"
 ass::ass(){
+	setFlag(false);
 }
 
 
@@ -55,7 +56,7 @@ void ass::deriving(int pos) {
 				_childs.push_back(newNode);
 				newNode->deriving(index+1);
 				if (signOfSemicolon == false) {
-					// Error
+					cout << "Error with signof expr" << endl;
 					throw 1;
 				}
 				else {
@@ -70,7 +71,7 @@ void ass::deriving(int pos) {
 				_childs.push_back(newNode);
 				newNode->deriving(index + 1);
 				if (signOfSemicolon == false) {
-					// Error
+					cout << "Error with sign of semilicon" << endl;
 					throw 1;
 				}
 				else {
@@ -81,12 +82,12 @@ void ass::deriving(int pos) {
 			}
 		}
 		else {
-			// Error
+			cout << "Error: ass" << endl;
 			throw 1;
 		}
 	}
 	else {
-		// Error
+		cout << "Error: expected id" << endl;
 		throw 1;
 	}
 	cout << "ass" << endl;

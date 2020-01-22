@@ -3,6 +3,7 @@
 
 
 args::args(){
+	setFlag(false);
 }
 
 
@@ -29,7 +30,7 @@ void args::deriving(int pos) {
 		}
 	}
 	else {
-		// Error
+		cout << "Error: expected (" << endl;
 	}
 	cout << "args" << endl;
 }

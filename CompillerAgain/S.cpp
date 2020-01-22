@@ -5,6 +5,7 @@
 
 S::S()
 {
+	setFlag(false);
 }
 
 

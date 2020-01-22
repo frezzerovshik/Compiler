@@ -4,6 +4,7 @@
 
 decls::decls(){
 	//Empty implementation
+	setFlag(false);
 }
 decls::~decls(){
 	//Empty implementation

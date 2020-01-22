@@ -19,3 +19,7 @@ void symbol::setParent(symbol* ptr) {
 symbol* symbol::getParent() {
 	return parent;
 }
+
+bool symbol::isTerminal() {
+	return flag;
+}

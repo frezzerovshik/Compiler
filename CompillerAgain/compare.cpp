@@ -4,6 +4,7 @@
 
 compare::compare(){
 	//Empty implementation
+	setFlag(false);
 }
 
 

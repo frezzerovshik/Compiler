@@ -3,7 +3,7 @@
 
 
 text::text(){
-
+	setFlag(false);
 }
 
 

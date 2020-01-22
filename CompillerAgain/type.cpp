@@ -10,6 +10,7 @@
 #include "terminal.h"
 type::type(){
     //Empty implementation
+	setFlag(false);
 }
 type::~type(){
     //Empty implementation

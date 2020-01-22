@@ -10,6 +10,7 @@
 #include "terminal.h"
 nums::nums(){
     //Empty implementation
+	setFlag(false);
 }
 nums::~nums(){
     //Empty implementation

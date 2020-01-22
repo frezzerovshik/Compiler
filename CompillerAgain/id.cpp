@@ -11,6 +11,7 @@
 
 id::id(){
     //Empty implementation
+	setFlag(false);
 }
 id::~id(){
     //Empty implementation
@@ -19,6 +20,7 @@ void id::deriving(int pos){
     if(lexStream[pos].type == IDENT){
         symbol* newLeaf = new terminal(Identifiers[lexStream[pos].numInValidTable].val);
         newLeaf->setParent(this);
+		_childs.push_back(newLeaf);
 		Identifiers[lexStream[pos].numInValidTable].setFlag(true);
     }
     else{

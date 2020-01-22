@@ -6,6 +6,7 @@
 
 call_func::call_func(){
 	// Empty implementation
+	setFlag(false);
 }
 
 

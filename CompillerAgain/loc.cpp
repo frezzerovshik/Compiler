@@ -12,6 +12,7 @@
 #include "nums.hpp"
 loc::loc(){
     //Empty implementation
+	setFlag(false);
 }
 loc::~loc(){
     //Empty implementation

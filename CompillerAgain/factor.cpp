@@ -5,6 +5,7 @@
 #include "terminal.h"
 factor::factor()
 {
+	setFlag(false);
 }
 
 

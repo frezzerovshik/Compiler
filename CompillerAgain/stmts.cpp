@@ -3,7 +3,7 @@
 
 
 stmts::stmts(){
-    
+	setFlag(false);
 }
 
 

@@ -2,7 +2,7 @@
 #include "symbol.h"
 
 class terminal : public symbol {
-	string _value;
+	
 	symbol* _parent;
 	terminal();
 public:
