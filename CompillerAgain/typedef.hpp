@@ -37,7 +37,9 @@ typedef struct ID {
 	ID(string line , int num);
 	string val;
 	int numId;
+	bool wasDeclarated;
 	bool operator==(ID obj);
+	void setFlag(bool a);
 }ID;
 typedef struct LEX {
 	LEX() {};

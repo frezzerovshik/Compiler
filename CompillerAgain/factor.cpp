@@ -30,6 +30,10 @@ void factor::deriving(int pos) {
 	}
 	else {
 		if (lexStream[pos].type == IDENT) {
+			if (Identifiers[lexStream[pos + 1].numInValidTable].wasDeclarated == false) {
+				cout << "Error: identifier must be declarated" << endl;
+				throw 1;
+			}
 			symbol* newNode = new loc;
 			newNode->setParent(this);
 			_childs.push_back(newNode);
@@ -57,5 +61,6 @@ void factor::deriving(int pos) {
 			}
 		}
 	}
+
 	cout << "factor" << endl;
 }

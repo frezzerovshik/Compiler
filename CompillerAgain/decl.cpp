@@ -26,6 +26,10 @@ void decl::deriving(int pos){
           _childs.push_back(newNode);
           newNode->deriving(pos);
           if(lexStream[pos+1].type == IDENT){
+			  if (Identifiers[lexStream[pos + 1].numInValidTable].wasDeclarated == true) {
+				  cout << "Error: identifier was declarated" << endl;
+				  throw 1;
+			  }
               symbol* newNode = new loc;
               newNode->setParent(this);
               _childs.push_back(newNode);

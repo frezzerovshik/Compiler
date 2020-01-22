@@ -19,6 +19,7 @@ void id::deriving(int pos){
     if(lexStream[pos].type == IDENT){
         symbol* newLeaf = new terminal(Identifiers[lexStream[pos].numInValidTable].val);
         newLeaf->setParent(this);
+		Identifiers[lexStream[pos].numInValidTable].setFlag(true);
     }
     else{
         cout<<"Error: unexpected symbol"<<endl;

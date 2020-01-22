@@ -40,3 +40,6 @@ KW::KW(string line, int num) {
 	this->val = line;
 	this->num = num;
 }
+void ID::setFlag(bool a) {
+	wasDeclarated = a;
+}
