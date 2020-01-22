@@ -11,16 +11,13 @@
 //#include <Curses.h>
 #include <Windows.h>
 #include <locale>
+#include "SyntaxAnalysis.h"
 int main(int argc, const char * argv[]) {
 	setlocale(LC_ALL, "Rus");
 	parser a;
+	SyntaxAnalysis b;
 	a.parsing();
-	cout <<endl<< "Поток лексем:" << endl;
-	a.printLexStream();
-	cout << "Таблица констант:" << endl;
-	a.printTableConst();
-	cout << "Таблица идентификаторов:" << endl;
-	a.printTableId();
+	b.treeMake();
 	system("pause");
 	return 0;
 }

@@ -37,7 +37,7 @@ parser::~parser() {
 			input >> c;
 			buffer += c;
 		} while (!input.eof());
-		cout << "Исходная цепочка:" << endl << buffer << endl;
+
 		do {
 			for (int i = 0; i < buffer.size(); ++i) {
 				if (buffer[i] == '/' && buffer[i + 1] == '/') {
@@ -61,9 +61,9 @@ parser::~parser() {
 			else {
 				next = false;
 			}
-			cout << "Цепочка на текущей итерации:" << endl << buffer << endl;
+			
 		} while (next);
-		cout << "Все комментарии удалены из входной цепочки" << endl;
+		
 		for (int i = 0; i < buffer.size(); ++i) {
 			string temp;
 			temp += buffer[i];
@@ -349,7 +349,7 @@ void parser::parsing() {
 			break;
 		}
 		case STATEMENT_FINAL: {
-			cout << "Входная цепочка прошла анализ успешно" << endl << endl;
+			//cout << "Входная цепочка прошла анализ успешно" << endl << endl;
 			break;
 		}
 		default: {

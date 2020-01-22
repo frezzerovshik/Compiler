@@ -19,7 +19,7 @@ void block::deriving(int pos) {
 	/*Check the stream of tokens for the declarations*/
 	while (declIsFound == false) {
 		if (lexStream[index].type == KEY_WORD) {
-			if (Identifiers[lexStream[index].numInValidTable].val == "integer" || Identifiers[lexStream[index].numInValidTable].val == "bool") {
+			if (KeyWords[lexStream[index].numInValidTable].val == "integer" || KeyWords[lexStream[index].numInValidTable].val == "bool") {
 				if (lexStream[index + 1].type == IDENT && (lexStream[index + 2].type == DIVIDE && Dividers[lexStream[index + 2].numInValidTable].val == ";")) {
 					index += 3;
 				}

@@ -140,6 +140,7 @@
     <ClInclude Include="stmt.h" />
     <ClInclude Include="stmts.h" />
     <ClInclude Include="symbol.h" />
+    <ClInclude Include="SyntaxAnalysis.h" />
     <ClInclude Include="table.h" />
     <ClInclude Include="term.h" />
     <ClInclude Include="terminal.h" />
@@ -176,6 +177,7 @@
     <ClCompile Include="stmt.cpp" />
     <ClCompile Include="stmts.cpp" />
     <ClCompile Include="symbol.cpp" />
+    <ClCompile Include="SyntaxAnalysis.cpp" />
     <ClCompile Include="term.cpp" />
     <ClCompile Include="terminal.cpp" />
     <ClCompile Include="text.cpp" />
