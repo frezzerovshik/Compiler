@@ -27,11 +27,14 @@ void call_func::deriving(int pos) {
 		}
 		else {
 			cout << "Error : expected (" << endl;
+			throw 1;
 			return;
 		}
 	}
 	else {
 		cout << "Error : expected id" << endl;
+		throw 1;
 		return;
 	}
+	cout << "call func" << endl;
 }

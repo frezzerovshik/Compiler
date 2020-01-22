@@ -18,6 +18,7 @@ void logic::deriving(int pos)
 			_childs.push_back(newLeaf_2);
 		}
 	}
+	cout << "logic" << endl;
 }
 
 logic::logic()

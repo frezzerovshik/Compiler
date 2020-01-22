@@ -22,6 +22,8 @@ void nums::deriving(int pos){
     }
     else{
         cout<<"Unexpected error"<<endl;
+		throw 1;
         return;
     }
+	cout << "nums" << endl;
 }

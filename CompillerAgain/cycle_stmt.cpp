@@ -28,12 +28,15 @@ void cycle_stmt::deriving(int pos) {
 			}
 			else {
 				cout << "Error: expected loop constuction" << endl;
+				throw 1;
 				return;
 			}
 		}
 	}
 	else {
 		cout << "Error: expected loop constuction" << endl;
+		throw 1;
 		return;
 	}
+	cout << "cycle_stmt" << endl;
 }

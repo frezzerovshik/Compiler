@@ -47,4 +47,5 @@ void term::deriving(int pos) {
 		_childs.push_back(op);
 		op->deriving(pos);
 	}
+	cout << "term" << endl;
 }

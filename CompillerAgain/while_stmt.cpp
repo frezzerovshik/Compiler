@@ -62,21 +62,27 @@ void while_stmt::deriving(int pos) {
 					}
 					else {
 						//Error
+						throw 1;
 					}
 				}
 				else {
 					// Error
+					throw 1;
 				}
 			}
 			else{
 				// Error
+				throw 1;
 			}
 		}
 		else {
 			// Error
+			throw 1;
 		}
 	}
 	else {
 		// Error
+		throw 1;
 	}
+	cout << "while" << endl;
 }

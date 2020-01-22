@@ -71,9 +71,8 @@ void stmts::deriving(int pos){
 				_childs.push_back(newNode_stmts);
 				newNode_stmts->deriving(end + 2);
 			}
-			else {
-				// Error
-			}
+			
 		}
 	}
+	cout << "stmts" << endl;
 }

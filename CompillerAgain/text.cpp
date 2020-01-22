@@ -40,6 +40,7 @@ void text::deriving(int pos) {
 					break;
 				default:
 					cout << "Error of lexial analyzer" << endl;
+					throw 1;
 					return;
 					break;
 				}
@@ -51,6 +52,8 @@ void text::deriving(int pos) {
 	}
 	else {
 		cout << "Error:expected '" << endl;
+		throw 1;
 		return;
 	}
+	cout << "text" << endl;
 }

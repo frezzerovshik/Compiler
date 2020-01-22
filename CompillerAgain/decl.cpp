@@ -29,11 +29,13 @@ void decl::deriving(int pos){
               symbol* newNode = new loc;
               newNode->setParent(this);
               _childs.push_back(newNode);
-              newNode->deriving(pos);
+              newNode->deriving(pos+1);
           }
       }
     else{
         cout<<"Error - need to set type of variable or returned value"<<endl;
+		throw 1;
         return;
     }
+	cout << "decl" << endl;
 }

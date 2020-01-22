@@ -1,12 +1,5 @@
-﻿  parser.cpp
-c:\users\артем\source\repos\compilleragain\compilleragain\parser.cpp(42): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\артем\source\repos\compilleragain\compilleragain\parser.cpp(67): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\артем\source\repos\compilleragain\compilleragain\parser.cpp(105): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\артем\source\repos\compilleragain\compilleragain\parser.cpp(122): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\артем\source\repos\compilleragain\compilleragain\parser.cpp(213): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\артем\source\repos\compilleragain\compilleragain\parser.cpp(366): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\артем\source\repos\compilleragain\compilleragain\table.h(42): warning C4018: <: несоответствие типов со знаком и без знака
-  c:\users\артем\source\repos\compilleragain\compilleragain\table.h(39): note: при компиляции функции-члена "<Нет данных>" класса класс <Нет данных>
-  c:\users\артем\source\repos\compilleragain\compilleragain\parser.cpp(219): note: выполняется компиляция ссылки на экземпляр шаблон функции "int table<KW>::isInTable(std::string)"
-  c:\users\артем\source\repos\compilleragain\compilleragain\parser.hpp(39): note: выполняется компиляция ссылки на экземпляр шаблон класс "table<KW>"
+﻿  stmts.cpp
+c:\users\артем\source\repos\compilleragain\compilleragain\stmts.cpp(18): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\артем\source\repos\compilleragain\compilleragain\stmts.cpp(39): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\артем\source\repos\compilleragain\compilleragain\stmts.cpp(58): warning C4018: <: несоответствие типов со знаком и без знака
   CompillerAgain.vcxproj -> C:\Users\Артем\source\repos\CompillerAgain\Debug\CompillerAgain.exe

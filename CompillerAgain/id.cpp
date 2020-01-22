@@ -22,7 +22,9 @@ void id::deriving(int pos){
     }
     else{
         cout<<"Error: unexpected symbol"<<endl;
+		throw 1;
     }
+	cout << "id" << endl;
 }
 
 

@@ -44,7 +44,7 @@ void if_stmt::deriving(int pos) {
 				newNode_stmt_if->setParent(this);
 				_childs.push_back(newNode_stmt_if);
 				newNode_stmt_if->deriving(index+1);
-				while (!(lexStream[index].type == KEY_WORD && Dividers[lexStream[index].numInValidTable].val == "ELSE"))
+				while (!(lexStream[index].type == KEY_WORD && KeyWords[lexStream[index].numInValidTable].val == "ELSE"))
 					index++;
 
 				symbol* newLeaf_else = new terminal("ELSE");
@@ -56,7 +56,7 @@ void if_stmt::deriving(int pos) {
 				_childs.push_back(newNode_stmt_else);
 				newNode_stmt_else->deriving(index + 1);
 
-				while (!(lexStream[index].type == KEY_WORD && Dividers[lexStream[index].numInValidTable].val == "ENDIF"))
+				while (!(lexStream[index].type == KEY_WORD && KeyWords[lexStream[index].numInValidTable].val == "ENDIF"))
 					index++;
 
 				symbol* newLeaf_endif = new terminal("ENDIF");
@@ -70,22 +70,27 @@ void if_stmt::deriving(int pos) {
 				}
 				else {
 					cout << "Error: expected ;" << endl;
+					throw 1;
 					return;
 				}
 
 			}
 			else {
 				cout << "Error: expected boolean expr" << endl;
+				throw 1;
 				return;
 			}
 		}
 		else {
 			cout << "Error: expected (" << endl;
+			throw 1;
 			return;
 		}
 	}
 	else {
 		cout << "Error: expected IF" << endl;
+		throw 1;
 		return;
 	}
+	cout << "if" << endl;
 }

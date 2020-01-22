@@ -36,4 +36,5 @@ void stmt::deriving(int pos) {
 			newNode->deriving(pos);
 		}
 	}
+	cout << "stmt" << endl;
 }

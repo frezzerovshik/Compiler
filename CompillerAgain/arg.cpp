@@ -25,21 +25,25 @@ void arg::deriving(int pos)
 				}
 				else {
 					cout << "Error: expected ," << endl;
+					throw 1;
 					return;
 				}
 			}
 			else {
 				cout << "Error: expected id" << endl;
+				throw 1;
 				return;
 			}
 		}
 		else {
 			cout << "Error: expected type" << endl;
+			throw 1;
 			return;
 		}
 	}
 	else {
 		cout << "Error: expected (" << endl;
+		throw 1;
 		return;
 	}
 
@@ -60,18 +64,21 @@ void arg::deriving(int pos)
 			}
 			else {
 				cout << "Error: expected id" << endl;
+				throw 1;
 				derived = false;
 				return;
 			}
 		}
 		else {
 			cout << "Error: expected type" << endl;
+			throw 1;
 			derived = false;
 			return;
 		}
 	}
 	else {
 		cout << "Error: expected (" << endl;
+		throw 1;
 		derived = false;
 		return;
 	}
@@ -99,24 +106,28 @@ void arg::deriving(int pos)
 				}
 				else {
 					cout << "Error: expected ;" << endl;
+					throw 1;
 					derived = false;
 					return;
 				}
 			}
 			else {
 				cout << "Error: expected )" << endl;
+				throw 1;
 				derived = false;
 				return;
 			}
 		}
 		else {
 			cout << "Error: expected id" << endl;
+			throw 1;
 			derived = false;
 			return;
 		}
 	}
 	else {
 		cout << "Error: expected type" << endl;
+		throw 1;
 		derived = false;
 		return;
 	}
@@ -134,15 +145,18 @@ void arg::deriving(int pos)
 		}
 		else {
 			cout << "Error: expected id" << endl;
+			throw 1;
 			derived = false;
 			return;
 		}
 	}
 	else {
 		cout << "Error: expected type" << endl;
+		throw 1;
 		derived = false;
 		return;
 	}
+	cout << "arg" << endl;
 }
 
 arg::arg()

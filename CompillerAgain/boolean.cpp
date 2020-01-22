@@ -14,6 +14,7 @@ boolean::~boolean()
 // <boolean>::=<factor><logic><factor> | <factor> <compare> <factor> | true |false
 
 void boolean::deriving(int pos) {
+	bool flag = false;
 	if (lexStream[pos].type == KEY_WORD &&
 		(KeyWords[lexStream[pos].numInValidTable].val == "true" ||
 			KeyWords[lexStream[pos].numInValidTable].val == "false") &&
@@ -38,6 +39,7 @@ void boolean::deriving(int pos) {
 				_childs.push_back(newNodeOperator);
 				newNodeOperator->deriving(i);
 				index = i + 1;
+				flag = true;
 				break;
 			}
 			else {
@@ -54,16 +56,23 @@ void boolean::deriving(int pos) {
 					_childs.push_back(newNodeOperator);
 					newNodeOperator->deriving(i);
 					index = i + 1;
+					flag = true;
 					break;
 				}
 				else {
-					// Error
+					flag = false;
 				}
 			}
 		}
-		symbol* newNode_op2 = new factor;
-		newNode_op2->setParent(this);
-		_childs.push_back(newNode_op2);
-		newNode_op2->deriving(index+1);
+		if (flag == true) {
+			symbol* newNode_op2 = new factor;
+			newNode_op2->setParent(this);
+			_childs.push_back(newNode_op2);
+			newNode_op2->deriving(index );
+		}
+		else {
+			throw 1;
+		}
 	}
+	cout << "boolean" << endl;
 }

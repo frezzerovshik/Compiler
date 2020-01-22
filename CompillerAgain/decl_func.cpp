@@ -50,13 +50,17 @@ void decl_func::deriving(int pos) {
 			}
 			else {
 				// Error
+				throw 1;
 			}
 		}
 		else {
 			// Error
+			throw 1;
 		}
 	}
 	else {
 		//Error
+		throw 1;
 	}
+	cout << "decl_func" << endl;
 }

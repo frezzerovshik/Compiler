@@ -96,77 +96,88 @@ void for_stmt::deriving(int pos) {
 																newEob->deriving(index + 1);
 															}
 															else {
-																cout << "Error : expected DO" << endl;
+																cout << "Error : expected DO" << endl; throw 1;
 																return;
 															}
 														}
 														else {
-															cout << "Error:expected )" << endl;
+															cout << "Error:expected )" << endl;	throw 1;
 															return;
 														}
 													}
 													else {
-														cout << "Expected unary" << endl;
+														cout << "Expected unary" << endl;	throw 1;
 														return;
 													}
 												}
 												else {
-													cout << "Error: expected unary" << endl;
+													cout << "Error: expected unary" << endl;	throw 1;
 													return;
 												}
 											}
 											else {
-												cout << "Error:expected semicolon" << endl;
+												cout << "Error:expected semicolon" << endl;	throw 1;
 												return;
 											}
 										}
 										else {
-											cout << "Error : expected constant" << endl;
+											cout << "Error : expected constant" << endl;	throw 1;
 											return;
 										}
 									}
 									else {
 										cout << "Error : expected compare" << endl;
+										throw 1;
 										return;
 									}
 								}
 								else {
 									cout << "Error : expected identifier" << endl;
+
+									throw 1;
 									return;
 								}
 							}
 							else {
 								cout << "Error:expected semicolon" << endl;
+								throw 1;
 								return;
 							}
 						}
 						else {
 							cout << "Error : non-constant" << endl;
+							throw 1;
 							return;
 						}
 					}
 					else {
 						cout << "Error : expected '='" << endl;
+						throw 1;
 						return;
 					}
 				}
 				else {
 					cout << "Error: expected identifier " << endl;
+					throw 1;
 					return;
 				}
 			}
 			else {
 				cout << "Error : expected type" << endl;
+				throw 1;
 				return;
 			}
 		}
 		else {
 			cout << "Error: expected '('" << endl;
+			throw 1;
 			return;
 		}
 	}
 	else {
 		cout << "Error : unexpected symbol in for_stmt" << endl;
+		throw 1;
 		return;
 	}
+	cout << "for" << endl;
 }

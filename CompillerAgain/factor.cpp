@@ -36,11 +36,12 @@ void factor::deriving(int pos) {
 			newNode->deriving(pos);
 		}
 		else {
-			if (lexStream[pos].type == CONSTANT) {
+			if (lexStream[pos-1].type == CONSTANT) {
+
 				symbol* newNode = new nums;
 				newNode->setParent(this);
 				_childs.push_back(newNode);
-				newNode->deriving(pos );
+				newNode->deriving(pos-1);
 			}
 			else {
 				if (lexStream[pos].type == KEY_WORD && (KeyWords[lexStream[pos].numInValidTable].val == "true" || KeyWords[lexStream[pos].numInValidTable].val == "false")) {
@@ -50,9 +51,11 @@ void factor::deriving(int pos) {
 				}
 				else {
 					cout << "Syntax undefined error" << endl;
+					throw 1;
 					return;
 				}
 			}
 		}
 	}
+	cout << "factor" << endl;
 }

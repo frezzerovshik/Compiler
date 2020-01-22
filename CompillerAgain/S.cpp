@@ -35,6 +35,8 @@ void S::deriving(int pos) {
 	}
 	else {
 		cout << "Error - point of enty in application is not defined correctly" << endl;
+		throw 1;
 		return;
 	}
+	cout << "S" << endl;
 }

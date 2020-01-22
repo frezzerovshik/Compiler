@@ -25,7 +25,8 @@ void compare::deriving(int pos) {
 			_childs.push_back(newLeaf_2);
 		}
 		else {
-			cout << "Error: expected an operator" << endl;
+			cout << "Error: expected an double operator" << endl;
+			throw 1;
 			return;
 		}
 	}
@@ -38,12 +39,59 @@ void compare::deriving(int pos) {
 			}
 			else {
 				cout << "Error: expected an operator" << endl;
+				switch (lexStream[pos - 1].type) {
+				case DIVIDE:
+					cout << Dividers[lexStream[pos - 1].numInValidTable].val << " ";
+					break;
+				case KEY_WORD:
+					cout << KeyWords[lexStream[pos - 1].numInValidTable].val << " ";
+					break;
+				case CONSTANT:
+					cout << Constants[lexStream[pos - 1].numInValidTable].val << " ";
+					break;
+				case IDENT:
+					cout << Identifiers[lexStream[pos - 1].numInValidTable].val << " ";
+					break;
+				}
+				switch (lexStream[pos].type) {
+				case DIVIDE:
+					cout << Dividers[lexStream[pos].numInValidTable].val << " ";
+					break;
+				case KEY_WORD:
+					cout << KeyWords[lexStream[pos].numInValidTable].val << " ";
+					break;
+				case CONSTANT:
+					cout << Constants[lexStream[pos ].numInValidTable].val << " ";
+					break;
+				case IDENT:
+					cout << Identifiers[lexStream[pos ].numInValidTable].val << " ";
+					break;
+				}
+				switch (lexStream[pos + 1].type) {
+				case DIVIDE:
+					cout << Dividers[lexStream[pos + 1].numInValidTable].val << " ";
+					break;
+				case KEY_WORD:
+					cout << KeyWords[lexStream[pos + 1].numInValidTable].val << " ";
+					break;
+				case CONSTANT:
+					cout << Constants[lexStream[pos + 1].numInValidTable].val << " ";
+					break;
+				case IDENT:
+					cout << Identifiers[lexStream[pos + 1].numInValidTable].val << " ";
+					break;
+				}
+				cout << endl;
+
+				throw 1;
 				return;
 			}
 		}
 		else {
 			cout << "Error: expected an operator" << endl;
+			throw 1;
 			return;
 		}
 	}
+	cout << "compare" << endl;
 }

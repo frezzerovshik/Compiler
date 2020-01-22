@@ -22,7 +22,7 @@ void eob::deriving(int pos){
 			symbol* newLeaf = new terminal(Dividers[lexStream[pos + 1].numInValidTable].val);
 			newLeaf->setParent(this);
 			_childs.push_back(newLeaf);
-			if (Dividers[lexStream[pos + 1].numInValidTable].val == ";") {
+			if (Dividers[lexStream[pos + 1].numInValidTable].val == ".") {
 				symbol *newNode = new block;
 				newNode->setParent(this);
 				_childs.push_back(newNode);
@@ -31,13 +31,15 @@ void eob::deriving(int pos){
 		}
 		else {
 			// Error
+			throw 1;
 		}
 	}
 	else {
 		// Error
+		throw 1;
 	}
 
-	
+	cout << "eob" << endl;
 
 }
 

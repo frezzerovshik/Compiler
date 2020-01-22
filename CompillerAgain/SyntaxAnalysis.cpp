@@ -12,6 +12,12 @@ SyntaxAnalysis::~SyntaxAnalysis()
 
 void SyntaxAnalysis::treeMake() {
 	S startSymbol;
-	startSymbol.deriving(0);
-	cout << "Successful syntax analysis" << endl;
+	//try {
+		startSymbol.deriving(0);
+		cout << "Successful syntax analysis" << endl;
+	//}
+	//catch (...) {
+		//cout << "Unsuccessful syntax analysis" << endl;
+	
+	//}
 }

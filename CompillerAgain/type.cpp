@@ -35,6 +35,8 @@ void type::deriving(int pos){
     }
     else{
         cout<<"Unexpected error"<<endl;
+		throw 1;
         return;
     }
+	cout << "type" << endl;
 }

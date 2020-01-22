@@ -25,12 +25,14 @@ void unary::deriving(int pos) {
 		}
 		else {
 			cout << "Error : characters must be equal" << endl;
+			throw 1;
 			return;
 		}
 	}
 	else {
 		cout << "Error : unexpected constuction" << endl;
+		throw 1;
 		return;
 	}
-
+	cout << "unary" << endl;
 }

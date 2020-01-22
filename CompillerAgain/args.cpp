@@ -31,4 +31,5 @@ void args::deriving(int pos) {
 	else {
 		// Error
 	}
+	cout << "args" << endl;
 }

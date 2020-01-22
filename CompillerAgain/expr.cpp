@@ -41,5 +41,5 @@ void expr::deriving(int pos) {
 			break;
 		}
 	}
-
+	cout << "expr" << endl;
 }

@@ -36,7 +36,7 @@ void ass::deriving(int pos) {
 			bool signOfExpr = false;
 			for (int i = index + 1; i < lexStream.size(); ++i) {
 				if (lexStream[i].type == DIVIDE && Dividers[lexStream[i].numInValidTable].val == ";") {
-					!signOfSemicolon;
+					signOfSemicolon = true;
 					break;
 				}
 				else {
@@ -56,6 +56,7 @@ void ass::deriving(int pos) {
 				newNode->deriving(index+1);
 				if (signOfSemicolon == false) {
 					// Error
+					throw 1;
 				}
 				else {
 					symbol* newLeaf = new terminal(";");
@@ -70,6 +71,7 @@ void ass::deriving(int pos) {
 				newNode->deriving(index + 1);
 				if (signOfSemicolon == false) {
 					// Error
+					throw 1;
 				}
 				else {
 					symbol* newLeaf = new terminal(";");
@@ -80,9 +82,12 @@ void ass::deriving(int pos) {
 		}
 		else {
 			// Error
+			throw 1;
 		}
 	}
 	else {
 		// Error
+		throw 1;
 	}
+	cout << "ass" << endl;
 }
