@@ -1,5 +1,5 @@
 #include "stmts.h"
-
+#include "stmt.h"
 
 
 stmts::stmts(){
@@ -13,16 +13,67 @@ stmts::~stmts(){
 // <stmts>::= <stmts><stmt>  | <stmt>
 // < stmt>::= <ass>; | <ass> | <cycle_stmt> | <if_stmt>
 void stmts::deriving(int pos){
-    int index = pos;
-    int startOfLasStatement{};
-    while((lexStream[index].type == KEY_WORD && KeyWords[lexStream[index].numInValidTable].val != "END" )&& (lexStream[index+1].type == KEY_WORD && KeyWords[lexStream[index+1].numInValidTable].val != ".")){
-        startOfLasStatement = index;
-		index++;
-    if((lexStream[pos].type == IDENT && (lexStream[pos+1].type == DIVIDE && Dividers[lexStream[pos+1].numInValidTable].val == "=") && lexStream[pos+2].type == IDENT) || (lexStream[pos].type == KEY_WORD && (KeyWords[lexStream[pos].numInValidTable].val == "if" || KeyWords[lexStream[pos].numInValidTable].val == "while" || KeyWords[lexStream[pos].numInValidTable].val == "for"  ))){
-        continue;
-        }
-    else{
-        //Добавить последнее выражение в дерево и вызвать свертку, после добавить еще стейтменсы хуейтменсы
-    }
-    }
+	if (lexStream[pos].type == IDENT) {
+		int end{};
+		for (int i = pos + 1; i < lexStream.size(); ++i) {
+			if (lexStream[i].type == DIVIDE && Dividers[lexStream[i].numInValidTable].val == ";") {
+				end = i;
+				break;
+			}
+		}
+		symbol* newNode = new stmt;
+		newNode->setParent(this);
+		_childs.push_back(newNode);
+		newNode->deriving(pos);
+
+		symbol* newNode_stmts = new stmts;
+		newNode_stmts->setParent(this);
+		_childs.push_back(newNode_stmts);
+		newNode_stmts->deriving(end+1);
+	}
+	else {
+		if (lexStream[pos].type == KEY_WORD && (KeyWords[lexStream[pos].numInValidTable].val == "WHILE" ||
+			KeyWords[lexStream[pos].numInValidTable].val == "DO" ||
+			KeyWords[lexStream[pos].numInValidTable].val == "FOR")) {
+			int end{};
+			for (int i = pos + 1; i < lexStream.size(); ++i) {
+				if (lexStream[i].type == KEY_WORD && (KeyWords[lexStream[i].numInValidTable].val == "END")) {
+					end = i;
+					break;
+				}
+			}
+			symbol* newNode = new stmt;
+			newNode->setParent(this);
+			_childs.push_back(newNode);
+			newNode->deriving(pos);
+
+			symbol* newNode_stmts = new stmts;
+			newNode_stmts->setParent(this);
+			_childs.push_back(newNode_stmts);
+			newNode_stmts->deriving(end + 2);
+		}
+		else {
+			if (lexStream[pos].type == KEY_WORD && (KeyWords[lexStream[pos].numInValidTable].val == "IF")) {
+				int end{};
+				for (int i = pos + 1; i < lexStream.size(); ++i) {
+					if (lexStream[i].type == KEY_WORD && (KeyWords[lexStream[i].numInValidTable].val == "ENDIF")) {
+						end = i;
+						break;
+					}
+				}
+				symbol* newNode = new stmt;
+				newNode->setParent(this);
+				_childs.push_back(newNode);
+				newNode->deriving(pos);
+
+				symbol* newNode_stmts = new stmts;
+				newNode_stmts->setParent(this);
+				_childs.push_back(newNode_stmts);
+				newNode_stmts->deriving(end + 2);
+			}
+			else {
+				// Error
+			}
+		}
+	}
 }
